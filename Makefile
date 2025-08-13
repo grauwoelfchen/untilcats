@@ -9,18 +9,20 @@ build-asset-release:
 build-asset: build-asset-debug
 .PHONY: build-asset
 
-build-debug: build-asset-debug
-	@rm -fr dist/*
+build-debug: clean build-asset-debug
 	npx elm-land build
 .PHONY: build-debug
 
-build-release: build-asset-release
-	@rm -fr dist/*
+build-release: clean build-asset-release
 	npx elm-land build
 .PHONY: build-release
 
 build: build-debug
 .PHONY: build
+
+clean:
+	@rm -fr dist/*
+.PHONY: clean
 
 server: build-asset-debug
 	@npx elm-land server
