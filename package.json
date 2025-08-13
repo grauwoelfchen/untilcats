@@ -2,9 +2,9 @@
   "name": "untilcats",
   "type": "module",
   "scripts": {
-    "build:debug": "make build:debug",
-    "build:release": "make build:release",
-    "build": "make build:release",
+    "build:debug": "make build-debug",
+    "build:release": "make build-release",
+    "build": "make build-release",
     "server": "make server"
   },
   "devDependencies": {
