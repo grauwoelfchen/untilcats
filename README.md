@@ -2,10 +2,19 @@
 
 ![Icon](img/icon.png?raw=true "Icon")
 
-UNutterd TIL screenCASTS. Learn something with *until* kingdom come ;)
+UNutterd TIL screenCASTS. Keep learning something new with *until* kingdom come ;)
 
 ~~https://untilcats.ch~~  
 https://video.grauwoelfchen.net
+
+
+## Cats?
+
+**Untilcats** —yes, it's \*cats\*, not cast. I pretended to make a cute typo,
+ha ha— is an experimental space for my miscellaneous UNuttered TIL
+(Today I Learnt) screenCASTS.
+
+Briefly speaking, it's a something like Video in the Void!
 
 
 ## Example
@@ -21,9 +30,9 @@ https://video.grauwoelfchen.net
 [![Example on GitHub](https://user-images.githubusercontent.com/163063/236181481-e27cc4fa-be6a-40a0-8ec7-e16e81333275.mp4)](https://user-images.githubusercontent.com/163063/236181481-e27cc4fa-be6a-40a0-8ec7-e16e81333275.mp4)
 
 
-## Prerequisites
+## Requirements
 
-* Node.js `>= v18.15.0`
+* Node.js `>= v20.19.4`
 
 
 ## Setup
@@ -55,7 +64,7 @@ https://video.grauwoelfchen.net
 
 ```txt
 Untilcats
-Copyright (C) 2023-2024 Yasha
+Copyright (C) 2023-2025 Yasha
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
