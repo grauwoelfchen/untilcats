@@ -22,6 +22,7 @@ build: build-debug
 
 clean:
 	@rm -fr dist/*
+	@rm -fr static/assets/**/*.{css,js,*.map}
 .PHONY: clean
 
 server: build-asset-debug
