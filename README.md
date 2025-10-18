@@ -1,3 +1,9 @@
+> [!NOTE]
+>
+> This repository has been moved. Please check the new location below:
+>
+> [grauwoelfchen/untilcats](https://codeberg.org/grauwoelfchen/untilcats) on Codeberg
+
 # Untilcats
 
 ![Logo](img/logo.png?raw=true "logo")
