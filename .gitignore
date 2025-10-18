@@ -1,6 +1,8 @@
 /dist
+
 /.elm-land
 /.env
+/.wrangler
 /elm-stuff
 /node_modules
 *.pem
