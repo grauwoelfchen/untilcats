@@ -1,5 +1,6 @@
 module API.Episodes exposing
-  ( getRecent
+  ( all
+  , getRecent
   , Episodes
   , Episode
   )
@@ -13,6 +14,17 @@ getRecent :
   }
   -> Cmd msg
 getRecent options =
+  Http.get
+    { url = "/data/episodes.json"
+    , expect = Http.expectJson options.onResponse decoder
+    }
+
+-- TODO: pagination
+all :
+  { onResponse : Result Http.Error Episodes -> msg
+  }
+  -> Cmd msg
+all options =
   Http.get
     { url = "/data/episodes.json"
     , expect = Http.expectJson options.onResponse decoder

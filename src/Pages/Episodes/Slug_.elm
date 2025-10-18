@@ -63,14 +63,12 @@ view params model =
     { page =
       { title = params.slug ++ " - Untilcats"
       , body =
-        [ p [ class "breadcrumbs" ]
-            [ span [] [ text "/" ]
-            , span [] [ a
-                [ Route.Path.href Route.Path.Home_]
+        [ div [ class "breadcrumb" ]
+            [ span [ class "divider" ] [ text "/" ]
+            , a [ Route.Path.href Route.Path.Episodes, class "item" ]
                 [ text "episodes" ]
-                ]
-            , span [] [ text "/" ]
-            , span [] [ text params.slug ]
+            , span [ class "divider" ] [ text "/" ]
+            , span [ class "item active" ] [ text params.slug ]
             ]
         , case model.episode of
             API.Loading ->
@@ -85,7 +83,7 @@ view params model =
 
 viewEpisode : Episode -> Html msg
 viewEpisode episode =
-  div []
+  div [ class "episode" ]
     [ div []
       [ h1 [] [ text episode.title ]
       , span [ class "number" ]

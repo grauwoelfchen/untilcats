@@ -1,4 +1,4 @@
-module Pages.Home_ exposing (page, Model, Msg)
+module Pages.Episodes exposing (Model, Msg, page)
 
 import Components.Navbar
 import Html exposing (..)
@@ -30,7 +30,7 @@ type alias Model =
 init : ( Model, Cmd Msg )
 init =
   ( { episodes = API.Loading }
-  , API.Episodes.getRecent
+  , API.Episodes.all
       { onResponse = APIResponded
       }
   )
@@ -66,19 +66,11 @@ view model =
     { page =
       { title = "Untilcats"
       , body =
-        [ div [ class "greeting" ]
-          [ p [] [ text "Miaow!" ]
-          , p [ class "description" ] [
-              p [] [ text "Learn something *until* kingdom come!" ]
-            , p []
-              [ span [] [ text "See" ]
-              , a [ Route.Path.href (Route.Path.About) ]
-                [ text "about" ]
-              , span [] [ text ":)" ]
-              ]
+        [ div [ class "breadcrumb" ]
+            [ span [ class "divider" ] [ text "/" ]
+            , span [ class "item active" ] [ text "episodes" ]
             ]
-          ]
-        , h1 [] [ text "Recent episodes" ]
+        , h1 [] [ text "All episodes" ]
         , case model.episodes of
             API.Loading ->
               div [ class "loading" ] [ text "Loading..." ]
@@ -93,7 +85,15 @@ view model =
 viewEpisodesList : Episodes -> Html Msg
 viewEpisodesList episodes =
   div [ class "episodes" ]
-    (List.indexedMap viewEpisode episodes.results)
+    [ p []
+      [ text ( "Showing all "
+          ++ (String.fromInt (List.length episodes.results))
+          ++ " episodes"
+        )
+      ]
+    , div []
+      (List.indexedMap viewEpisode episodes.results)
+    ]
 
 viewEpisode : Int -> Episode -> Html Msg
 viewEpisode _ episode =
